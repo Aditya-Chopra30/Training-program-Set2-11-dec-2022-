@@ -1,0 +1,33 @@
+class Solution {
+    public int[] searchRange(int[] nums, int target) 
+    {
+        int x,a=0,b=0,re[]=new int[2];
+        for(x=0;x<nums.length;x++)
+        {
+            if(nums[x]==target)
+            { 
+                a=1;
+                 re[0]=x;
+                 break;
+            }
+        }   
+        if(a==0)
+        {
+            re[0]=-1;
+        } 
+        for(x=nums.length-1;x>=0;x--)
+        {
+            if(nums[x]==target)
+            {
+                b=1;
+                re[1]=x;
+                break;
+            }
+        }
+        if(b==0)
+        {
+            re[1]=-1;
+        }
+        return re;
+    }
+}
